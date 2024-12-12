@@ -1,0 +1,296 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, hsl(184, 71%, 37%) 0%, #fda085 100%);
+    min-height: 100vh;
+    padding: 40px 40px;
+}
+
+.container {
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 40px;
+    font-size: 3.5em;
+    text-shadow: 2px 2px 4px rgba(139, 79, 79, 0.1);
+    font-weight: 700px;
+}
+
+.sandwich-builder {
+    display:flex ;
+    gap: 90px;
+    background: linear-gradient(135deg, hsl(184, 71%, 37%) 0%, #fda085 100%);
+    padding: 40px;
+    border-radius: 100px;
+    box-shadow: 0 10px 30px rgba(230, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.ingredients-section {
+    flex: 1;
+    padding-right: 50px;
+    border-right: 2px solid #ffffff;
+}
+
+.preview-section {
+    flex: 1;
+    position: sticky;
+    top: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.548);
+    border-radius: 15px;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+    color: #3d3b44;
+    margin-bottom: 25px;
+    font-size: 2em;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: #ff8c6c;
+    border-radius: 2px;
+}
+
+h3 {
+    color: #000000;
+    margin: 20px 0 15px;
+    font-size: 1.5em;
+    font-weight: 500;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+}
+
+.ingredient-category {
+    margin-bottom: 35px;
+    padding: 20px;
+    background: rgba(255, 245, 245, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.ingredients {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 20px;
+}
+
+.ingredient {
+    background: white;
+    border: 2px solid #e8e8e8;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    cursor: poi;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.ingredient:hover {
+    border-color: #fda085;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(253, 160, 133, 0.2);
+}
+
+.ingredient.selected {
+    border-color: #fda085;
+    background: linear-gradient(135deg, #fff5eb 0%, #fff 100%);
+    box-shadow: 0 5px 15px rgba(253, 160, 133, 0.3);
+}
+
+.ingredient img {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.ingredient:hover img {
+    transform: scale(1.1);
+}
+
+.ingredient span {
+    display: block;
+    font-size: 1em;
+    color: #2d3436;
+    font-weight: 500;
+    margin-top: 8px;
+    font-family:  'Lucida Sans Unicode', ;
+}
+
+.sandwich-preview {
+    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+    border: 3px solid #f0f0f0;
+    border-radius: 15px;
+    padding: 25px;
+    min-height: 350px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sandwich-layers {
+    display: flex;
+    flex-direction:column-reverse;
+    gap: 8px;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.layer {
+    width: 90%;
+    height: 50px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.selected-ingredients {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+    
+}
+
+#ingredients-list {
+    list-style: none;
+    padding: 10px;
+}
+
+#ingredients-list li {
+    margin: 8px 0;
+    color: #2d3436;
+    padding: 8px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    position: relative;
+    padding-left: 25px;
+}
+
+#ingredients-list li::before {
+    content: '•';
+    color: #fda085;
+    position: absolute;
+    left: 10px;
+    font-size: 1.2em;
+}
+
+.reset-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff8787 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.2);
+}
+
+.reset-btn:hover {
+    background: linear-gradient(135deg, #ff5252 0%, #ff6b6b 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(255, 107, 107, 0.3);
+}
+
+@media (max-width: 768px) {
+    .sandwich-builder {
+        flex-direction: column;
+    }
+    
+    .ingredients-section {
+        border-right: none;
+        border-bottom: 2px solid #f0f0f0;
+        padding-right: 0;
+        padding-bottom: 30px;
+    }
+    
+    .preview-section {
+        position: static;
+    }
+}
+.layer.bread-top.white, .layer.bread-bottom.white {
+    background-color: #f5e0c8; 
+}
+
+.layer.bread-top.wheat, .layer.bread-bottom.wheat {
+    background-color: #f5d7b5; 
+}
+
+.layer.bread-top.rye, .layer.bread-bottom.rye {
+    background-color: #a67c52; 
+}
+/* American Cheese */
+.layer.cheese.american {
+    background-color: #ffd700;
+    height :12px 
+    
+}
+
+/* Swiss Cheese */
+.layer.cheese.swiss {
+    background-color: #f0e68c; 
+    height :12px
+}
+
+/* Cheddar Cheese */
+.layer.cheese.cheddar {
+    background-color: #ff8c00; 
+    height :12px
+}
+.layer.protein.turkey {
+    background-color: #d8c3a5; /* Light beige for Turkey */
+  }
+  
+  .layer.protein.beef {
+    background-color: #7e3b30; 
+  }
+  
+  .layer.protein.tuna {
+    background-color: #4682b4; 
+  }
+  .layer.veggie.lettuce {
+    background-color: #8bc34a; 
+    height :20px
+  }
+  
+  .layer.veggie.tomato {
+    background-color: #e53935; 
+    height :20px
+  }
+  
+  .layer.veggie.onion {
+    background-color: #9c27b0; 
+    height :20px
+  }
+  
+
+  
