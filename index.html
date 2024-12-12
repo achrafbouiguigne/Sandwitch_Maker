@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandwich Maker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Build Your Perfect Sandwich</h1>
+        
+        <div class="sandwich-builder">
+            <div class="ingredients-section">
+                <h2>Choose Your Ingredients</h2>
+                
+                <div class="ingredient-category">
+                    <h3>Bread</h3>
+                    <div class="ingredients">
+                        <div class="ingredient" data-type="bread" data-name="White">
+                            <img src="/image/white bread.jpg" alt="White Bread">
+                            <span>White</span>
+                        </div>
+                        <div class="ingredient" data-type="bread" data-name="Wheat">
+                            <img src="/image/wheate bread.jpg" alt="Wheat Bread">
+                            <span>Wheat</span>
+                        </div>
+                        <div class="ingredient" data-type="bread" data-name="Rye">
+                            <img src="/image/rye bread.jpg" alt="Rye Bread">
+                            <span>Rye</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ingredient-category">
+                    <h3>Protein</h3>
+                    <div class="ingredients">
+                        <div class="ingredient" data-type="protein" data-name="Turkey">
+                            <img src="/image/turkey.jpg" alt="Turkey">
+                            <span>Turkey</span>
+                        </div>
+                        <div class="ingredient" data-type="protein" data-name="Beef">
+                            <img src="/image/cow.jpg" alt="Ham">
+                            <span>Beef</span>
+                        </div>
+                        <div class="ingredient" data-type="protein" data-name="Tuna">
+                            <img src="/image/tuna.jpg" alt="Tuna">
+                            <span>Tuna</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ingredient-category">
+                    <h3>Vegetables</h3>
+                    <div class="ingredients">
+                        <div class="ingredient" data-type="veggie" data-name="Lettuce">
+                            <img src="/image/lettuce.jpg" alt="Lettuce">
+                            <span>Lettuce</span>
+                        </div>
+                        <div class="ingredient" data-type="veggie" data-name="Tomato">
+                            <img src="/image/tomato.jpeg" alt="Tomato">
+                            <span>Tomato</span>
+                        </div>
+                        <div class="ingredient" data-type="veggie" data-name="Onion">
+                            <img src="/image/onion.jpg" alt="Onion">
+                            <span>Onion</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ingredient-category">
+                    <h3>Cheese</h3>
+                    <div class="ingredients">
+                        <div class="ingredient" data-type="cheese" data-name="American">
+                            <img src="/image/american.jpg" alt="American">
+                            <span>American</span>
+                        </div>
+                        <div class="ingredient" data-type="cheese" data-name="Swiss">
+                            <img src="/image/swiss.jpg" alt="Swiss">
+                            <span>Swiss</span>
+                        </div>
+                        <div class="ingredient" data-type="cheese" data-name="Cheddar">
+                            <img src="/image/chedar.avif+" alt="Cheddar">
+                            <span>Cheddar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="preview-section">
+                <h2>Your Sandwich</h2>
+                <div class="sandwich-preview">
+                    <div class="sandwich-layers"></div>
+                </div>
+                <div class="selected-ingredients">
+                    <h3>Selected Ingredients:</h3>
+                    <ul id="ingredients-list"></ul>
+                </div>
+                <button id="reset-sandwich" class="reset-btn">Start Over</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
